@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Music Player</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="logo">MusicWave</div>
+            <div class="nav-item active" data-view="home">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+            </div>
+            <div class="nav-item" data-view="music">
+                <i class="fas fa-music"></i>
+                <span>Music</span>
+            </div>
+            <div class="nav-item" data-view="radio">
+                <i class="fa-solid fa-tower-broadcast"></i>
+                <span>Radio</span>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Search tracks, artists, stations...">
+                <i class="fas fa-search"></i>
+            </div>
+            <!-- Home View -->
+            <div class="view active" id="homeView">
+                <h2 class="section-title">Featured Music</h2>
+                <div class="scrollable-row" id="featuredMusic"></div>
+
+                <h2 class="section-title">Popular Radio Stations</h2>
+                <div class="scrollable-row" id="featuredRadio"></div>
+
+                <div class="fun-facts">
+                    <h3>Did You Know?</h3>
+                    <p id="funFact">Loading interesting facts about music...</p>
+                </div>
+                <!-- Add inside homeView section after fun-facts -->
+                <div class="visualizer">
+                    <canvas id="visualizerCanvas"></canvas>
+                </div>
+            </div>
+
+            <!-- Music View -->
+            <div class="view" id="musicView">
+                <h2 class="section-title">All Music</h2>
+                <div class="grid" id="musicGrid"></div>
+            </div>
+
+            <!-- Radio View -->
+            <div class="view" id="radioView">
+                <h2 class="section-title">All Radio Stations</h2>
+                <div class="grid" id="radioGrid"></div>
+            </div>
+        </main>
+    </div>
+
+    <div class="player">
+        <div class="now-playing">
+            <div class="album-art" id="currentAlbumArt">
+                <img src="" alt="Now Playing">
+            </div>
+            <div class="track-info">
+                <h3 id="currentTrack">-</h3>
+                <p id="currentArtist">-</p>
+            </div>
+        </div>
+
+        <div class="player-controls">
+            <button id="prev"><i class="fas fa-step-backward"></i></button>
+            <button id="playPause"><i class="fas fa-play"></i></button>
+            <button id="next"><i class="fas fa-step-forward"></i></button>
+            <div class="progress-bar">
+                <div class="progress"></div>
+            </div>
+        </div>
+
+        <div class="volume-control">
+            <i class="fas fa-volume-up"></i>
+            <input type="range" id="volume" min="0" max="1" step="0.1" value="0.5">
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
