@@ -1,1 +1,1 @@
- download all the files in the folder, and open in VS code and run it with live server.
+ download all the files in the folder "Music-radio-streaming", and open in VS code and run it with live server.
